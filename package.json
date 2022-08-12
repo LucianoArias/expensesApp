@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server.js",
+    "server": "nodemon server.js",
+    "frontend": "cd frontend && npm run start",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "buildClient": "cd ../frontend && npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^3.12.0",
+    "ajv-formats": "^2.1.1",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "luxon": "^2.3.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.1.0",
+    "nodemon": "^2.0.15",
+    "prisma": "^4.1.1"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  }
+}
